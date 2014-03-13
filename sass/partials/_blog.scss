@@ -1,0 +1,30 @@
+.post {
+	@extend %article;
+    header {
+        border-bottom: 1px solid $MEDIUM_GREY;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        time {
+            color: $MEDIUM_GREY;
+        }
+        .title {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.post-list .post {
+	@extend %media;
+	@extend %article-list-item;
+    header {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    @include respond-to("max-width:" + $SMALLER_SCREEN_WIDTH) {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        .media-img {
+            display: none;
+        }
+    }
+}

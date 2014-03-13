@@ -1,0 +1,35 @@
+.pagination {
+	@include heading-font();
+
+	margin: 100px 0 40px 0;
+	font-size: 1.1em;
+	text-align: center;
+
+	a, .next, .prev {
+		margin-right: 10px;
+		text-transform: capitalize;
+		text-decoration: none;
+		padding: 6px 10px;
+		color: $LINK_COLOR;
+		text-align: center;
+	}
+	a:hover {
+		color: darken($LINK_COLOR, 20);
+	}
+	span {
+		color: #444;
+		padding: 8px 6px;
+		margin-right: 10px;
+	}
+	.disabled {
+		color: #999;
+		@include opacity(.40);
+	}
+	.current {
+		font-weight: bold;
+	}
+
+	@include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
+		font-size: 0.85em;
+	}
+}

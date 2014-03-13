@@ -1,0 +1,81 @@
+// General Page copy styles (blog posts, pages, events, etc)
+.content {
+	@include clearfix;
+
+	h1, h2, h3, h4, h5 {
+		font-family: $SANS_SERIF_FONT_STACK;
+		line-height: 1.5;
+	}
+
+    h1 {
+        @include font-size(2.75);
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid $LIGHT_GREY;
+    }
+	
+	h2 {
+		@include font-size(2.5);
+		margin-bottom: 1em;
+	}
+	h3 {
+		@include font-size(2.0);
+		font-weight:bold;
+	}
+	h4 {
+		@include font-size(1.8);
+		font-weight: bold;
+	}
+    
+	blockquote {
+		@include font-size(1.6);
+		font-style: normal;
+		margin: 10px 40px;
+		color: $MEDIUM_GREY;
+	}
+
+	ul {
+		list-style-type: square;
+		line-height: 1.25;
+	}
+    ol {
+        line-height: 1.25;
+    }
+    li {
+		margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        > ul {
+            margin-top: 0.5em;
+        }
+    }
+
+    img {
+        height: auto !important;
+        display: block;
+        margin-bottom: 20px;
+    }
+	
+	hr {
+		width: 90%;
+		border: 0;
+		height: 1px;
+		background-color: $LIGHT_GREY;
+	}
+
+    @include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
+		h2 {
+			@include font-size(2);
+		}
+		h3 {
+			@include font-size(1.8);
+		}
+		h4 {
+			@include font-size(1.6);
+		}
+		blockquote {
+			@include font-size(1.5);
+		}
+	}
+}

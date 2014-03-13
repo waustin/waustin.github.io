@@ -1,0 +1,45 @@
+%sidebar {
+	float: left;
+	width: 20%;
+	@include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
+		width: auto;
+		float: none;
+		margin-right: 0;
+        margin-top: 0;
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid $LIGHT_GREY;
+	}
+
+}
+%main-column {
+	float: left;
+	width: 80%;
+    padding: 0 40px;
+	@include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
+		width: auto;
+		float: none;
+	}
+}
+
+// 2 column layout class
+.two-column-layout {
+     background: white url(../images/two-column-background.png) repeat-y 20% 0;
+     @include clearfix;
+	.sidebar {
+		@extend %sidebar;
+		position: relative;
+        margin-top: -50px;
+	}
+	.main-column {
+		@extend %main-column;
+	}
+
+    @include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
+        background-image: none;
+        .sidebar {
+            border-bottom: 1px solid $LIGHT_GREY;
+        }
+    }
+}
+

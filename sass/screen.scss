@@ -1,0 +1,49 @@
+@import "partials/base";
+
+body { 
+
+}
+
+
+.main-header {
+	padding: 20px 0;
+    border-bottom: 10px solid $BLACK;
+}
+
+
+.main-content-wrapper {
+	padding: 50px 0;
+    min-height: 400px;
+}
+
+.main-footer {
+    background-color: $BLACK;	
+    padding: 40px 0;
+    -webkit-font-smoothing: antialiased;
+	*  {
+        color: white;
+    }
+    ul {
+		@extend %horizontal-nav;
+	}
+}
+
+.main-footer .contact-nav {
+	li {
+		margin-right: 1em;;
+	}
+	li a {
+        text-decoration: underline;
+        &:hover {
+            color: darken(#FFFFFF, 30%);
+        }
+	}
+}
+
+
+
+
+@import "partials/blog";
+@import "partials/home";
+@import "partials/pagination";
+@import "partials/page_content";
