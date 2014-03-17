@@ -13,8 +13,9 @@
 
 // For Article Types (blog posts, events )
 %article-list-item {
-	padding-bottom: 45px;
-	margin-bottom: 45px;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+    border-bottom: 1px solid $LIGHT_GREY;
 	header {
 		margin-bottom: 20px;
 		.title {
@@ -25,6 +26,9 @@
 			font-size: 1em;
 		}
 	}
+    &:last-child {
+        border-bottom: 0;
+    }
 	@include respond-to("max-width:" + $SMALL_SCREEN_WIDTH) {
 		header {
 			.title {
